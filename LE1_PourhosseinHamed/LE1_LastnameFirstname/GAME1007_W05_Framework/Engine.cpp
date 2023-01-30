@@ -55,7 +55,7 @@ int Engine::Init(const char* title, const int xPos, const int yPos,
 		Mix_AllocateChannels(16);
 		m_sfx.emplace("slacker", Mix_LoadWAV("../Assets/aud/slacker.wav"));
 		m_sfx.emplace("jump", Mix_LoadWAV("../Assets/aud/jump.wav"));
-		m_pGuile = Mix_LoadMUS("../Assets/aud/bac.mp3");
+
 		Mix_PlayMusic(m_pGuile, -1);
 		
 	}
@@ -82,12 +82,12 @@ void Engine::HandleEvents()
 			m_isRunning = false; // Tell Run() we're done.
 			break;
 		case SDL_KEYDOWN:
-			if (event.key.keysym.scancode == SDL_SCANCODE_SPACE)
+			if (event.key.keysym.scancode == SDL_SCANCODE_1)
 			{
 				Mix_PlayChannel(-1, m_sfx["slacker"], 0);
 				cout << "slackerrrrrrrrrrrrrrrrrrr" << endl;
 			}
-			else if (event.key.keysym.scancode == SDL_SCANCODE_S)
+			else if (event.key.keysym.scancode == SDL_SCANCODE_2)
 			{
 				Mix_PlayChannel(-1, m_sfx["jump"], 0);
 				cout << "jump" << endl;

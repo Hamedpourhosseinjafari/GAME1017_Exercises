@@ -23,7 +23,7 @@ public: // Put public heading first so you ALWAYS question why things are public
 	SDL_Renderer* GetRenderer();
 	static Engine& Instance(); // Accessor for Engine object.
 	double deltaTime;
-
+	
 private:
 	Engine();
 	// For fixed timestep.
@@ -39,6 +39,7 @@ private:
 	// Example-specific properties.
 	map<string, Mix_Chunk*> m_sfx;
 	Mix_Music* m_pGuile;
+	
 
 
 	chrono::time_point<chrono::steady_clock> lastFrameTime, thisFrameTime; // Cleaned this up.
