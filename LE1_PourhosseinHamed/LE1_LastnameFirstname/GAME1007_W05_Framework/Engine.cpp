@@ -85,6 +85,11 @@ void Engine::HandleEvents()
 				Mix_PlayChannel(-1, m_sfx["slacker"], 0);
 				cout << "slackerrrrrrrrrrrrrrrrrrr" << endl;
 			}
+			else if (event.key.keysym.scancode == SDL_SCANCODE_S)
+			{
+				Mix_PlayChannel(-1, m_sfx["jump"], 0);
+				cout << "jump" << endl;
+			}
 		}
 	}
 }
