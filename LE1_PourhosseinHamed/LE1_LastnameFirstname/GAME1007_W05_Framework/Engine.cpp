@@ -55,7 +55,9 @@ int Engine::Init(const char* title, const int xPos, const int yPos,
 		Mix_AllocateChannels(16);
 		m_sfx.emplace("slacker", Mix_LoadWAV("../Assets/aud/slacker.wav"));
 		m_sfx.emplace("jump", Mix_LoadWAV("../Assets/aud/jump.wav"));
-		m_pGuile = Mix_LoadMUS("../Assets/aud/guile.mp3");
+		m_pGuile = Mix_LoadMUS("../Assets/aud/bac.mp3");
+		Mix_PlayMusic(m_pGuile, -1);
+		
 	}
 	else return 1;
 	// Example-specific initialization.
