@@ -1,7 +1,11 @@
 #pragma once
 #ifndef __STATES_H__
 #define __STATES_H__
+#include <map>
+#include <SDL_mixer.h>
+#include <string>
 
+#include "Engine.h"
 class State // Abstract base class.
 { // No objects of State can be created.
 public:
@@ -12,6 +16,7 @@ public:
 	virtual void Resume() {}; // Considered defined for all subclasses.
 protected: // Private but inherited.
 	State() = default;
+	
 };
 
 class TitleState: public State
@@ -24,6 +29,7 @@ public:
 	virtual void Exit();
 private:
 	//map for music track goes here
+	map<string, Mix_Chunk*> m_sfx;
 
 };
 
@@ -40,7 +46,34 @@ public:
 private:
 	//map for music track goes here
 	// map for sound effects goes here
+	//map<string, Mix_Chunk*> m_sfx;
+
+	map<string, Mix_Chunk*> m_sfx;
 };
+
+class PauseState : public State
+{
+public:
+	PauseState();
+	virtual void Enter();
+	virtual void Update();
+	virtual void Render();
+	virtual void Exit();
+private:
+};
+
+class EndState : public State
+{
+public:
+	EndState();
+	virtual void Enter();
+	virtual void Update();
+	virtual void Render();
+	virtual void Exit();
+
+};
+
+
 
 
 #endif

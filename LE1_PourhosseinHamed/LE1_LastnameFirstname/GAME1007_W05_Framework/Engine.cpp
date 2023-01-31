@@ -78,9 +78,12 @@ void Engine::HandleEvents()
 	{
 		switch (event.type)
 		{
-		case SDL_QUIT: // Pressing 'X' icon in SDL window.
-			m_isRunning = false; // Tell Run() we're done.
-			break;
+		case SDL_QUIT:
+			//if (event.key.keysym.scancode == SDL_SCANCODE_X)// Pressing 'X' icon in SDL window.
+			//{
+				m_isRunning = false; // Tell Run() we're done.
+				break;
+			//}
 		case SDL_KEYDOWN:
 			if (event.key.keysym.scancode == SDL_SCANCODE_1)
 			{
