@@ -21,7 +21,7 @@ void TitleState::Enter()
 	//Mix_PlayMusic(m_pGuile2, -1);
 	/*m_sfx.emplace(["back1"], Mix_LoadMUS("../Assets/aud/bac.mp3");*/
 	m_sfx.emplace("back1", Mix_LoadWAV("../Assets/aud/bac.wav"));
-	Mix_PlayChannel(1, m_sfx["back1"], 0);
+	Mix_PlayChannel(1, m_sfx["back1"], -1);
 	
 }
 
@@ -93,6 +93,14 @@ void GameState::Update()
 	}
 	// parse 1 key and play first sfx
 	// parse 2 key and play first sfx
+	//if (Engine::Instance().KeyDown(SDL_SCANCODE_1))
+	//{
+	//	Mix_PlayChannel(-1, m_sfx["slacker"], 0);
+	//}
+	//if (Engine::Instance().KeyDown(SDL_SCANCODE_2))
+	//{
+	//	Mix_PlayChannel(-1, m_sfx["jump"], 0);
+	//}
 }
 
 void GameState::Render()
