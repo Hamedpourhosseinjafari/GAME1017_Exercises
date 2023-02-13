@@ -43,7 +43,9 @@ public:
 	virtual void Resume();
 	static std::vector<Bullet*>& Bullets() { return s_bullets; }
 	static std::vector<Enemy*>& Enemies() { return s_enemies; }
+	
 private:
+	
 	tinyxml2::XMLDocument m_xmlDoc;
 	std::vector<Turret*> m_turrets;
 	static std::vector<Enemy*> s_enemies; // Didn't need to be static. Spawning enemies from this class.

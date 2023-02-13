@@ -10,6 +10,7 @@ public:
 	void Update();
 	void Render();
 	bool m_deletMe = false;
+	
 
 private:
 	static const float s_speed; // Common to all enemies. Also just showing a static property again.

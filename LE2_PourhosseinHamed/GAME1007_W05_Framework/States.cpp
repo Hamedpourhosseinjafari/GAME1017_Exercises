@@ -5,6 +5,7 @@
 #include "EventManager.h"
 #include "RenderManager.h"
 #include "TextureManager.h"
+#include "Bullet.h"
 using namespace std;
 
 void State::Render()
@@ -63,18 +64,18 @@ void GameState::Enter()
 		// Keep the width and height as 100.
 	// Look at the last two XML examples from Week 3
 	m_xmlDoc.LoadFile("../Assets/dat/turrets.xml");
-	tinyxml2::XMLElement* Proute = m_xmlDoc.FirstChildElement();
-	if (Proute == nullptr)
+	tinyxml2::XMLElement* Proot = m_xmlDoc.FirstChildElement();
+	if (Proot == nullptr)
 	{
 		return;
 	}
-	tinyxml2::XMLElement* PTurretElement = Proute->FirstChildElement();
+	tinyxml2::XMLElement* PTurretElement = Proot->FirstChildElement();
 	while (PTurretElement != nullptr)
 	{
 		if (strcmp(PTurretElement->Value(),"turret") == 0)
 		{
 			float x = PTurretElement->FloatAttribute("x.POS");
-			float y = PTurretElement->FloatAttribute("y,POS");
+			float y = PTurretElement->FloatAttribute("y.POS");
 			int kills = PTurretElement->IntAttribute("kills");
 			auto turret = new Turret({ 0,0,100,100 }, { x,y,100.f,100.f });
 			m_turrets.push_back(turret);
@@ -125,9 +126,9 @@ void GameState::Update()
 		{
 			if (COMA::AABBCheck(*bullet->GetDst(),*enemy->GetDst()))
 			{
+				bullet->m_parent->m_Kills + 1;
 				enemy->m_deletMe = true;
 				bullet->m_deleteMe = true;
-				//bullet->m_parent->m_Kills++;
 				
 				break;
 			}
@@ -146,6 +147,7 @@ void GameState::Update()
 		if (s_bullets[i]->m_deleteMe)
 		{
 			s_bullets.erase(s_bullets.begin() + i);
+			
 		}
 	}
 
@@ -181,19 +183,20 @@ void GameState::Render()
 
 void GameState::Exit()
 {
+	
 	// You can clear all children of the root node by calling .DeleteChildren(); and this will essentially clear the DOM.
 	m_xmlDoc.DeleteChildren();
-	tinyxml2::XMLNode* Proute = m_xmlDoc.NewElement("route");
-	m_xmlDoc.InsertEndChild(Proute);
+	tinyxml2::XMLNode* Proot = m_xmlDoc.NewElement("root");
+	m_xmlDoc.InsertEndChild(Proot);
 	tinyxml2::XMLElement* pTurretElement;
 	// Iterate through all the turrets and save their positions as child elements of the root node in the DOM.
 	for (auto turret : m_turrets)
 	{
 		pTurretElement = m_xmlDoc.NewElement("turret");
 		pTurretElement->SetAttribute("x.POS", turret->GetDst()->x);
-		pTurretElement->SetAttribute("Y.POS", turret->GetDst()->y);
+		pTurretElement->SetAttribute("y.POS", turret->GetDst()->y);
 		pTurretElement->SetAttribute("kills", turret->m_Kills);
-		Proute->InsertEndChild(pTurretElement);
+		Proot->InsertEndChild(pTurretElement);
 	}
 	// Make sure to save to the XML file.
 		// xmlDoc.SaveFile("Turrets.xml");

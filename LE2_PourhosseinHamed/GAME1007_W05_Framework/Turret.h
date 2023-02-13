@@ -9,6 +9,7 @@ public:
 	Turret(const SDL_Rect, const SDL_FRect);
 	void Update();
 	void Render();
+
 	int m_Kills = 0;
 
 private:

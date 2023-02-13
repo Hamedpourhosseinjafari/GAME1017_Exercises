@@ -9,7 +9,7 @@ class Bullet : public GameObject
 private:
 	double m_dx, m_dy;
 	static const float s_speed;
-
+	
 public:
 	Bullet(const SDL_FRect, const double, const double);
 	void Update();

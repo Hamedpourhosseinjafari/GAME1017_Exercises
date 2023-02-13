@@ -54,12 +54,8 @@ void Turret::Update()
 			m_fireCtr = s_coolDown;
 		}
 	}
-	// check for collision with each enemy object
-	//for (const SDL_Rect& enemy : closestEnemy) {
-	//	if (COMA::CircleAABBCheck({ (float)GameObject::GetDst()->x, (float)GameObject::GetDst()->y }, playerRadius, enemy)) {
-	//	// collision detected, handle it (e.g. reduce player's health, etc.)
-	//	}
-	//}
+
+
 
 }
 
