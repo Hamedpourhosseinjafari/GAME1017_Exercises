@@ -1,8 +1,8 @@
-<root>
+<Info>
     <turret x.POS="495" y.POS="300" kills="0"/>
     <turret x.POS="248" y.POS="300" kills="0"/>
     <turret x.POS="745" y.POS="292" kills="0"/>
     <turret x.POS="347" y.POS="524" kills="0"/>
     <turret x.POS="520" y.POS="616" kills="0"/>
     <turret x.POS="143" y.POS="475" kills="0"/>
-</root>
+</Info>

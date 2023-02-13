@@ -186,7 +186,7 @@ void GameState::Exit()
 	
 	// You can clear all children of the root node by calling .DeleteChildren(); and this will essentially clear the DOM.
 	m_xmlDoc.DeleteChildren();
-	tinyxml2::XMLNode* Proot = m_xmlDoc.NewElement("root");
+	tinyxml2::XMLNode* Proot = m_xmlDoc.NewElement("Info");
 	m_xmlDoc.InsertEndChild(Proot);
 	tinyxml2::XMLElement* pTurretElement;
 	// Iterate through all the turrets and save their positions as child elements of the root node in the DOM.
