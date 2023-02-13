@@ -11,6 +11,7 @@ private:
 private:
 	StateManager() = default;
 public:
+	static void Update();
 	static void Render();
 	static void PushState(State* pState);
 	static void PopState();

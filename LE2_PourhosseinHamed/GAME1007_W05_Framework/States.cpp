@@ -127,7 +127,7 @@ void GameState::Update()
 			{
 				enemy->m_deletMe = true;
 				bullet->m_deleteMe = true;
-				bullet->m_parent->m_Kills++;
+				//bullet->m_parent->m_Kills++;
 				
 				break;
 			}
