@@ -101,5 +101,25 @@ void Ship::TeleportShip()
 	// Hints: Get the current state, invoke GetChild and get the asteroids
 	//		  Search for a new center point, doing a collision check with asteroids with a wider radius
 	//		  If you've found a clear center point, move the ship there
+	bool found = false;
+	SDL_FPoint p;
+	while (!found)
+	{
+		float rx = std::rand() % static_cast<int>(kWidth - m_radius);
+		float ry = std::rand() % static_cast<int>(kHeight - m_radius);
+		p = { rx, ry };
+		vector<Asteroid*>& field = static_cast<AsteroidField*>(STMA::CurrentState()->GetChild("field"))->GetAsteroids();
 
+		bool collision = false;
+		for (const auto& ast : field) {
+			if (COMA::CircleCircleCheck(p, ast->GetCenter(), m_radius * 8, ast->GetRadius())) {
+				collision = true;
+				break;
+			}
+		}
+		found = !collision;
+	}
+
+	m_center = p;
 }
+
