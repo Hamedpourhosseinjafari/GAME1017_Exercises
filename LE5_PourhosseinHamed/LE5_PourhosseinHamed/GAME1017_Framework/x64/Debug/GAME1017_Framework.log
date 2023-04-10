@@ -1,0 +1,22 @@
+﻿  Background.cpp
+  Button3.cpp
+  CollisionManager.cpp
+  DebugManager.cpp
+  Engine.cpp
+  EventManager.cpp
+  FontManager.cpp
+  GameObject.cpp
+  Main.cpp
+  MathManager.cpp
+  Obstacle.cpp
+  ObstacleRow.cpp
+C:\Users\hamed\OneDrive\Desktop\FUndumentals2\GAME1017_Exercises\LE5_PourhosseinHamed\LE5_PourhosseinHamed\GAME1017_Framework\ObstacleRow.cpp(29,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Primitives.cpp
+  RenderManager.cpp
+  ScrollingBackground.cpp
+  SoundManager.cpp
+  StateManager.cpp
+  States.cpp
+  TextureManager.cpp
+  Generating Code...
+  GAME1017_Framework.vcxproj -> C:\Users\hamed\OneDrive\Desktop\FUndumentals2\GAME1017_Exercises\LE5_PourhosseinHamed\LE5_PourhosseinHamed\Bin\GAME1017_Framework.exe

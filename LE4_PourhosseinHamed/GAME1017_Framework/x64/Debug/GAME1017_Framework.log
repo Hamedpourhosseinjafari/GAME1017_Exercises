@@ -1,6 +1,1 @@
-﻿  TiledLevel.cpp
-C:\Users\hamed\OneDrive\Desktop\FUndumentals2\GAME1017_Exercises\LE4_PourhosseinHamed\GAME1017_Framework\TiledLevel.cpp(35,30): warning C4018: '<': signed/unsigned mismatch
-C:\Users\hamed\OneDrive\Desktop\FUndumentals2\GAME1017_Exercises\LE4_PourhosseinHamed\GAME1017_Framework\TiledLevel.cpp(38,31): warning C4018: '<': signed/unsigned mismatch
-C:\Users\hamed\OneDrive\Desktop\FUndumentals2\GAME1017_Exercises\LE4_PourhosseinHamed\GAME1017_Framework\TiledLevel.cpp(69,29): warning C4018: '<': signed/unsigned mismatch
-C:\Users\hamed\OneDrive\Desktop\FUndumentals2\GAME1017_Exercises\LE4_PourhosseinHamed\GAME1017_Framework\TiledLevel.cpp(71,30): warning C4018: '<': signed/unsigned mismatch
-  GAME1017_Framework.vcxproj -> C:\Users\hamed\OneDrive\Desktop\FUndumentals2\GAME1017_Exercises\LE4_PourhosseinHamed\Bin\GAME1017_Framework.exe
+﻿  GAME1017_Framework.vcxproj -> C:\Users\hamed\OneDrive\Desktop\Desktop\FUndumentals2\GAME1017_Exercises\LE4_PourhosseinHamed\Bin\GAME1017_Framework.exe
